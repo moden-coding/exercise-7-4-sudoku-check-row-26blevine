@@ -1,6 +1,18 @@
 # Write your solution here
 def column_correct(list : list, column_num : int):
-    pass
+    check = []
+    for row in list:
+        check.append(row[column_num])
+
+    for val in range(1, 10):
+        seen_once = False
+        for num in check:
+            if num == val:
+                if not seen_once:
+                    seen_once = True
+                else:
+                    return False
+    return True
 
 if __name__ == "__main__":
 
